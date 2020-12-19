@@ -52,7 +52,7 @@ postBudget(data:BudgetSchema) {
 signUp(data:UserSchema) {
   const headers = {'content-type': 'application/json'};
   const body = JSON.stringify(data);
-  return this.http.post('https://personalbudgetbackend.herokuapp.com/users',body,{'headers':headers});
+  return this.http.post('https://personalbudgetbackend.herokuapp.com/auth/users',body,{'headers':headers});
 }
 
 

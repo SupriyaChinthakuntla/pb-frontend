@@ -46,12 +46,10 @@ export class SignupComponent implements OnInit {
     record['username'] = this.username;
     record['password'] = this.password;
     record['email'] = this.email;
-    record['repassword'] = this.repassword;
     console.log(this.userData);
     for(let i = 0; i < this.userData.length; i++){
       if(this.userData[i].username == this.username){
         console.log("There exists a user with same username");
-        // this.toast.warning('User already exists! Please go to login page!');
 
         return;
       }
@@ -65,10 +63,8 @@ export class SignupComponent implements OnInit {
     signUpRecord['username'] = this.username;
     signUpRecord['password'] = this.password;
     signUpRecord['email'] = this.email;
-    signUpRecord['repassword'] = this.repassword;
     console.log(JSON.stringify(signUpRecord));
       if(!this.username || !this.password || !this.email || !this.repassword){
-        // this.toast.error('Please enter all the required fields','Warning');
         this.incompleteDetails();
         return;
       } else {
@@ -83,7 +79,7 @@ export class SignupComponent implements OnInit {
         err => {
           console.log(err)
           console.log("Validation failed");
-          this.router.navigate(['/login']);
+          // this.router.navigate(['/login']);
         })
     }
   }

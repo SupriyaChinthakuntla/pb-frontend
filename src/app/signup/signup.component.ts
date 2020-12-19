@@ -46,6 +46,7 @@ export class SignupComponent implements OnInit {
     record['username'] = this.username;
     record['password'] = this.password;
     record['email'] = this.email;
+    record['repassword'] = this.repassword;
     console.log(this.userData);
     for(let i = 0; i < this.userData.length; i++){
       if(this.userData[i].username == this.username){
@@ -63,6 +64,7 @@ export class SignupComponent implements OnInit {
     signUpRecord['username'] = this.username;
     signUpRecord['password'] = this.password;
     signUpRecord['email'] = this.email;
+    signUpRecord['repassword'] = this.repassword;
     console.log(JSON.stringify(signUpRecord));
       if(!this.username || !this.password || !this.email || !this.repassword){
         this.incompleteDetails();
@@ -74,6 +76,7 @@ export class SignupComponent implements OnInit {
           this.username = "";
           this.password = "";
           this.email = "";
+          this.repassword = "";
           this.router.navigate(['/login']);
         },
         err => {
